@@ -9,7 +9,7 @@ const ServiceList = () => {
     const [userOrder, setUserOrder] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:8000/specificUserOrder?email='+loggedInUser.email)
+        fetch('https://immense-island-63375.herokuapp.com/specificUserOrder?email='+loggedInUser.email)
         .then(res => res.json())
         .then(data =>{
             setUserOrder(data);

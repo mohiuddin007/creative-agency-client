@@ -6,7 +6,7 @@ const Services = () => {
     const [servicesInfo, setServicesInfo] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:8000/services')
+        fetch('https://immense-island-63375.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             setServicesInfo(data);
@@ -16,6 +16,7 @@ const Services = () => {
     return ( 
         <div className="container mt-5 pt-5">
             <h1 className="text-center">Provide awesome <span className="text-info">Services</span></h1>
+           
             <div className="row justify-content-center mt-5">
                {
                    servicesInfo.length === 0 && <img src={loadingGif} style={{width:'400px', textAlign:'center'}} alt="loading"/>
@@ -23,6 +24,7 @@ const Services = () => {
                 { 
                    servicesInfo.map( data => <ServicesInfoCard data={data}/>)
                 }
+               
             </div>
         </div>
     );

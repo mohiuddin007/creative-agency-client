@@ -7,9 +7,9 @@ const MakeAdmin = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, watch, errors } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data, event) => {
         const newAdmin = {...data}
-        fetch('http://localhost:8000/makeAdmin', {
+        fetch('https://immense-island-63375.herokuapp.com/makeAdmin', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(newAdmin)
@@ -17,7 +17,8 @@ const MakeAdmin = () => {
         .then(res => res.json())
         .then(data =>{
             if(data){
-                alert('You have created a new admin')
+                alert('You have created a new admin');
+                event.target.reset();
             }
         })
     }

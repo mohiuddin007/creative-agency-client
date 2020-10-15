@@ -7,9 +7,9 @@ const Review = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const { register, handleSubmit, watch, errors } = useForm();
 
-    const onSubmit = data => {
+    const onSubmit = (data, event) => {
         const newReview = {...data};
-        fetch('http://localhost:8000/addNewReview',{
+        fetch('https://immense-island-63375.herokuapp.com/addNewReview',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newReview)
@@ -18,6 +18,7 @@ const Review = () => {
       .then(data=>{
         if(data){
           alert('Your review saved in database and home page');
+          event.target.reset();
         }
       })
 

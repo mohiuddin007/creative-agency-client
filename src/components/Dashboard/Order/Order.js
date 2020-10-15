@@ -11,7 +11,7 @@ const Order = () => {
     const [servicesInfo, setServicesInfo] = useState([]);
 
     useEffect(() =>{
-        fetch('http://localhost:8000/services')
+        fetch('https://immense-island-63375.herokuapp.com/services')
         .then(res => res.json())
         .then(data => {
             setServicesInfo(data);
@@ -21,9 +21,9 @@ const Order = () => {
     const services = servicesInfo.find(service => service._id === id) || {};
     
 
-    const onSubmit = data => {
+    const onSubmit = (data, e) => {
         const newOrder = {...data};
-        fetch('http://localhost:8000/addNewOrder',{
+        fetch('https://immense-island-63375.herokuapp.com/addNewOrder',{
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newOrder)
@@ -32,6 +32,7 @@ const Order = () => {
       .then(data=>{
         if(data){
           alert('Your order successfully has done');
+          e.target.reset();
         }
       })
 

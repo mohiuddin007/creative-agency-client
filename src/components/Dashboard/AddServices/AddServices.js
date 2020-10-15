@@ -18,19 +18,20 @@ const AddServices = () => {
        setFile(newFile);
    }
  
-   const handleSubmit = () => {
+   const handleSubmit = (e) => {
     const formData = new FormData()
     formData.append('file', file);
     formData.append('title', serviceInfo.title);
     formData.append('description', serviceInfo.description);
   
-    fetch('http://localhost:8000/addServices', {
+    fetch('https://immense-island-63375.herokuapp.com/addServices', {
       method: 'POST',
       body: formData
     })
     .then(response => response.json())
     .then(data => {
-      console.log(data)
+      console.log(data);
+      e.target.reset();
     })
     .catch(error => {
       console.error(error)

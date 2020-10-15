@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 import logo from '../../../images/logos/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboardList, faCommentDots, faPlus, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { faClipboardList, faCommentDots, faPlus, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 const Sidebar = () => {
@@ -11,7 +11,7 @@ const Sidebar = () => {
     const [isAdmin, setIsAdmin] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:8000/adminCheck', {
+        fetch('https://immense-island-63375.herokuapp.com/adminCheck', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email: loggedInUser.email })
