@@ -14,7 +14,7 @@ const ServicesInfoCard = ({data}) => {
         });
     
     return (
-        <div className="col-md-3 text-center text-dark m-3 p-3 servicesCard">
+        <div className="col-md-3 text-center m-3 p-3 servicesCard">
             <Link to={`./order/${data._id}`} style={{textDecoration: 'none'}}>
             <img src={`data:image/png;base64,${data.image.img}`} className="rounded-circle mx-auto d-block cardImg" alt=""/>
                <animated.div style={styles}>
