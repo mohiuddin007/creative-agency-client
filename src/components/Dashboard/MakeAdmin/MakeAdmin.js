@@ -30,11 +30,11 @@ const MakeAdmin = () => {
         <div className="col-md-9">
         <div className="pageHeading">
                 <div className="row justify-content-between">
-                    <div className="col-md-4"> <h1 className="pt-5">Make Admin</h1> </div>
-                    <div className="col-md-4"><h5 className="pt-5">{loggedInUser.name}</h5></div>
+                    <div className="col-md-4"> <h1 className="pt-3">Make Admin</h1> </div>
+                    <div className="col-md-4"><h5 className="pt-3">{loggedInUser.name}</h5></div>
                 </div>
             </div>
-            <div className="mainBody container">
+            <div className="mainBody container" style={{ height: "80vh" }}>
                 <div className="row p-5 justify-content-center">
                     <div className="col-md-10 bg-light mt-5 p-4">
                         <form onSubmit={handleSubmit(onSubmit)}>

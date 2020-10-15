@@ -23,8 +23,8 @@ const AllServicesList = () => {
         <div className="col-md-9">
         <div className="pageHeading">
                 <div className="row justify-content-between">
-                    <div className="col-md-4"> <h1 className="pt-5">All Services List</h1> </div>
-                    <div className="col-md-4"><h5 className="pt-5">{loggedInUser.name}</h5></div>
+                    <div className="col-md-4"> <h1 className="pt-3">All Services List</h1> </div>
+                    <div className="col-md-4"><h5 className="pt-4">{loggedInUser.name}</h5></div>
                 </div>
             </div>
             <div className="mainBody">

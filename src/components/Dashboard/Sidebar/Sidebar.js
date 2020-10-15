@@ -22,9 +22,9 @@ const Sidebar = () => {
             })
     }, [])
     return (
-        <div className="sidebar d-flex flex-column py-5 px-4" style={{ height: "100vh" }}>
+        <div className="sidebar d-flex flex-column py-5 px-4" >
             <Link to="/">
-                <img src={logo} className="mx-auto d-block logoSize" alt="logo" />
+                <img src={logo} className="mx-auto d-block logoSize" alt="logo"/>
             </Link>
             <ul className="list-unstyled mt-5">
                 { !isAdmin && <div>
