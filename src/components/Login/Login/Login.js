@@ -34,7 +34,8 @@ const Login = () => {
                  email: email
                 };
                 setLoggedInUser(signedInUser);
-                history.replace(from);
+                setUserIdToken();
+               
           })
           .catch(function(error) {
             // Handle Errors here.
@@ -45,6 +46,17 @@ const Login = () => {
             // The firebase.auth.AuthCredential type that was used.
             var credential = error.credential;
             // ...
+          });
+    }
+
+    const setUserIdToken = () => {
+        firebase.auth().currentUser.getIdToken(/* forceRefresh */ true)
+        .then(function(idToken) {
+            sessionStorage.setItem('token', idToken);
+            history.replace(from);
+          })
+          .catch(function(error) {
+            // Handle error
           });
     }
 

@@ -1,6 +1,7 @@
 import React from 'react';
 
 const AllServicesListInfo = ({data}) => {
+    
     return (
             <tr>
                 <td>{data.name}</td>
