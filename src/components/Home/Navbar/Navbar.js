@@ -5,7 +5,7 @@ import './Navbar.css';
 
 const Navbar = () => {
     return (
-        <nav class="navbar navbar-expand-lg navbar-light">
+        <nav className="navbar navbar-expand-lg navbar-light">
        <Link to="/" className="navbar-brand">
            <img src={logo} className="logoSize" alt="logo"/>
         </Link>
