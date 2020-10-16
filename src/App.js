@@ -16,6 +16,7 @@ import AllServicesList from './components/Dashboard/AllServicesList/AllServicesL
 import AddServices from './components/Dashboard/AddServices/AddServices';
 import MakeAdmin from './components/Dashboard/MakeAdmin/MakeAdmin';
 import NotFound from './components/NotFound/NotFound';
+import PrivateRouteTwo from './components/Login/PrivateRouteTwo/PrivateRouteTwo';
 
 export const UserContext = createContext();
 
@@ -32,27 +33,27 @@ function App() {
               <PrivateRoute path="/order/:id">
                 <Dashboard/>
               </PrivateRoute>
-              <Route path="/order">
+              <PrivateRoute path="/order">
                 <Dashboard/>
-              </Route>
+              </PrivateRoute>
               <Route path="/login">
                 <Login/>
               </Route>
-              <Route path="/serviceList">
+              <PrivateRoute path="/serviceList">
                 <ServiceList/>
-              </Route>
-              <Route path="/review">
-                <Review/>
-              </Route>
-              <PrivateRoute path="/allServiceList">
-                <AllServicesList/>
               </PrivateRoute>
-              <Route path="/addService">
+              <PrivateRoute path="/review">
+                <Review/>
+              </PrivateRoute>
+              <PrivateRouteTwo path="/allServiceList">
+                <AllServicesList/>
+              </PrivateRouteTwo>
+              <PrivateRouteTwo path="/addService">
                 <AddServices/>
-              </Route>
-              <Route path="/makeAdmin">
+              </PrivateRouteTwo>
+              <PrivateRouteTwo path="/makeAdmin">
                 <MakeAdmin/>
-              </Route>
+              </PrivateRouteTwo>
               <Route path="*">
                 <NotFound/>
               </Route>
