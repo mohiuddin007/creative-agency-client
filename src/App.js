@@ -1,5 +1,4 @@
 import React, { createContext, useState } from 'react';
-import './App.css';
 import Home from './components/Home/Home/Home';
 import {
   BrowserRouter as Router,
@@ -16,7 +15,6 @@ import AllServicesList from './components/Dashboard/AllServicesList/AllServicesL
 import AddServices from './components/Dashboard/AddServices/AddServices';
 import MakeAdmin from './components/Dashboard/MakeAdmin/MakeAdmin';
 import NotFound from './components/NotFound/NotFound';
-import PrivateRouteTwo from './components/Login/PrivateRouteTwo/PrivateRouteTwo';
 
 export const UserContext = createContext();
 
@@ -45,15 +43,15 @@ function App() {
               <PrivateRoute path="/review">
                 <Review/>
               </PrivateRoute>
-              <PrivateRouteTwo path="/allServiceList">
+              <PrivateRoute path="/allServiceList">
                 <AllServicesList/>
-              </PrivateRouteTwo>
-              <PrivateRouteTwo path="/addService">
+              </PrivateRoute>
+              <PrivateRoute path="/addService">
                 <AddServices/>
-              </PrivateRouteTwo>
-              <PrivateRouteTwo path="/makeAdmin">
+              </PrivateRoute>
+              <PrivateRoute path="/makeAdmin">
                 <MakeAdmin/>
-              </PrivateRouteTwo>
+              </PrivateRoute>
               <Route path="*">
                 <NotFound/>
               </Route>

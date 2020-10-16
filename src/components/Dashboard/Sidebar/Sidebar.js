@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Sidebar.css';
 import logo from '../../../images/logos/logo.png';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClipboardList, faCommentDots, faPlus, faShoppingCart, faUserPlus } from '@fortawesome/free-solid-svg-icons';
+import { faClipboardList, faCommentDots, faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import { UserContext } from '../../../App';
 
 const Sidebar = () => {
@@ -27,7 +27,7 @@ const Sidebar = () => {
                 <img src={logo} className="mx-auto d-block logoSize" alt="logo"/>
             </Link>
             <ul className="list-unstyled mt-5">
-                { !isAdmin && <div>
+                <div>
                 <li>
                     <Link to="/order" className="nav-link text-dark">
                         <FontAwesomeIcon icon={faShoppingCart} /><span>Order</span>
@@ -44,24 +44,11 @@ const Sidebar = () => {
                     </Link>
                 </li>
                 </div>
-                }
                 {
                     isAdmin && <div>
-                        <li>
-                            <Link to="/allServiceList" className="nav-link text-dark">
-                                <FontAwesomeIcon icon={faClipboardList} /> <span>All Services List</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/addService" className="nav-link text-dark">
-                                <FontAwesomeIcon icon={faPlus} /><span>Add Service</span>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to="/makeAdmin" className="nav-link text-dark">
-                                <FontAwesomeIcon icon={faUserPlus} /><span>Make Admin</span>
-                            </Link>
-                        </li>
+                        <Link to="/allServiceList" className="nav-item mx-2">
+                        <button className="btn btn-dark px-4">Admin Panel</button>
+                        </Link>
                     </div>
                 }
 

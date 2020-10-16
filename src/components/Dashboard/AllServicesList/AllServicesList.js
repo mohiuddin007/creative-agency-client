@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { UserContext } from '../../../App';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 import AllServicesListInfo from '../AllServicesListInfo/AllServicesListInfo';
 import Sidebar from '../Sidebar/Sidebar';
 
@@ -18,7 +19,7 @@ const AllServicesList = () => {
     return (
         <div className="row">
         <div className="col-md-3">
-           <Sidebar/>
+           <AdminSidebar/>
         </div>
         <div className="col-md-9">
         <div className="pageHeading">

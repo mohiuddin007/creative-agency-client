@@ -1,6 +1,6 @@
 import React, { useContext, useState } from 'react';
 import { UserContext } from '../../../App';
-import Sidebar from '../Sidebar/Sidebar';
+import AdminSidebar from '../AdminSidebar/AdminSidebar';
 
 const AddServices = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -42,7 +42,7 @@ const AddServices = () => {
     return (
         <div className="row">
         <div className="col-md-3">
-           <Sidebar/>
+           <AdminSidebar/>
         </div>
         <div className="col-md-9">
         <div className="pageHeading">
