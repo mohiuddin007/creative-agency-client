@@ -60,6 +60,20 @@ const Login = () => {
           });
     }
 
+    // const signOutBtn = () => {
+    //     firebase.auth().signOut().then(function() {
+    //         const logOut = {
+    //             isSignedIn: "false",
+    //             name: " ",
+    //             email: " "
+    //         }
+    //         sessionStorage.removeItem('token');
+    //         setLoggedInUser(logOut);
+    //       })
+    //       .catch(function(error) {
+    //         // An error happened.
+    //       });
+    // }
     return (
         <div>
             <div className="container mt-5 pt-5">
